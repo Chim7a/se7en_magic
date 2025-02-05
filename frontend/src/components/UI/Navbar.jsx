@@ -8,7 +8,6 @@ import { NavLink } from "react-router";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-  console.log(showMenu);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -20,7 +19,7 @@ const Navbar = () => {
         <nav className="relative">
           <div className="flex justify-between h-[10dvh] items-center p-8">
             <div>
-              <h1 className=" text-xl font-semibold">Seven Magic</h1>
+              <h1 className=" text-xl font-semibold">Se7en Magic</h1>
             </div>
 
             <div className=" hidden sm:visible sm:flex gap-5">
