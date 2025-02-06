@@ -67,7 +67,7 @@ const Navbar = () => {
           </div>
 
           {/* Drop down Menu */}
-          <div className="sm:hidden absolute w-full flex justify-center  ">
+          <div className="sm:hidden absolute w-full flex justify-center z-50  ">
             {showMenu ? (
               <div className=" sm:hidden flex flex-col justify-center items-center w-full h-[90dvh] top-19 bg-white gap-8 ">
                 <NavLink

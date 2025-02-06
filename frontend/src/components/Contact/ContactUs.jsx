@@ -2,6 +2,8 @@ import { Button, Input } from "antd";
 import axios from "axios";
 import React, { useState } from "react";
 import validator from "validator";
+import { BACKEND_BASE_URL } from "../../utilities/helper";
+
 const { TextArea } = Input;
 const ContactUs = () => {
   const [enquiryFormData, setEnquiryFormData] = useState({
@@ -11,7 +13,10 @@ const ContactUs = () => {
   });
 
   async function handleAddEnquiryName() {
-    if (validator.isEmpty(enquiryFormData.name, { ignore_whitespace: true })) {
+    if (
+      validator.isEmpty(enquiryFormData.name, { ignore_whitespace: true }) ===
+      true
+    ) {
       return alert("Please enter name");
     }
 
@@ -22,14 +27,16 @@ const ContactUs = () => {
     if (
       validator.isEmpty(enquiryFormData.enquiryMessage, {
         ignore_whitespace: true,
-      })
+      }) === true
     ) {
       return alert("Please enter a message");
     }
 
     try {
-      const response = await axios.post(enquiryFormData);
-      console.log(response);
+      const response = await axios.post(`${BACKEND_BASE_URL}/enquiry/create`, {
+        enquiryFormData,
+      });
+      return response;
     } catch (error) {
       console.log(error);
     }
@@ -45,7 +52,7 @@ const ContactUs = () => {
       </div>
 
       <div className=" h-full">
-        <form className="flex flex-col gap-3">
+        <form className="flex flex-col gap-3 ">
           <Input
             onChange={(e) =>
               setEnquiryFormData({
@@ -75,7 +82,7 @@ const ContactUs = () => {
             maxLength={600}
           />
           <Button
-            // onClick={handleAddEnquiryName}
+            onClick={handleAddEnquiryName}
             type="primary"
             className=" cursor-pointer bg-secondary hover:bg-secondary"
           >
