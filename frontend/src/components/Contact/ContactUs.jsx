@@ -12,7 +12,7 @@ const ContactUs = () => {
     enquiryMessage: "",
   });
 
-  async function handleAddEnquiryName() {
+  async function handleAddEnquiry() {
     if (
       validator.isEmpty(enquiryFormData.name, { ignore_whitespace: true }) ===
       true
@@ -33,10 +33,11 @@ const ContactUs = () => {
     }
 
     try {
-      const response = await axios.post(`${BACKEND_BASE_URL}/enquiry/create`, {
-        enquiryFormData,
-      });
-      return response;
+      const response = await axios.post(
+        `${BACKEND_BASE_URL}/enquiry/create`,
+        enquiryFormData
+      );
+      return console.log(response);
     } catch (error) {
       console.log(error);
     }
@@ -82,7 +83,7 @@ const ContactUs = () => {
             maxLength={600}
           />
           <Button
-            onClick={handleAddEnquiryName}
+            onClick={handleAddEnquiry}
             type="primary"
             className=" cursor-pointer bg-secondary hover:bg-secondary"
           >
