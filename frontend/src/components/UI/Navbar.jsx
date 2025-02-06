@@ -17,7 +17,7 @@ const Navbar = () => {
     <header>
       <div className="container mx-auto text-secondary">
         <nav className="relative">
-          <div className="flex justify-between h-[10dvh] items-center p-8">
+          <div className="flex justify-between h-[10dvh] items-center p-5">
             <div>
               <h1 className=" text-xl font-semibold">Se7en Magic</h1>
             </div>

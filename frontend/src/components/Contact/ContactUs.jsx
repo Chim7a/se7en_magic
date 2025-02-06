@@ -43,7 +43,7 @@ const ContactUs = () => {
   }
 
   return (
-    <div className=" container mx-auto max-w-[500px] h-[90dvh] flex flex-col px-5 ">
+    <div className=" container mx-auto max-w-[600px] h-[90dvh] flex flex-col px-5 ">
       <div className=" h-full flex flex-col justify-center ">
         <h2 className="text-2xl text-primary font-bold pb-3">Admin</h2>
         <p className=" text-xl font-extralight">Lilian Umoh</p>
