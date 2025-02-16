@@ -33,6 +33,7 @@ const ContactUs = () => {
     }
 
     try {
+      // Data being sent to the backed.
       const response = await axios.post(
         `${BACKEND_BASE_URL}/enquiry/create`,
         enquiryFormData

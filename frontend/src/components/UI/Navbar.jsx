@@ -15,14 +15,14 @@ const Navbar = () => {
 
   return (
     <header>
-      <div className="container mx-auto text-secondary">
-        <nav className="relative">
-          <div className="flex justify-between h-[10dvh] items-center p-5">
+      <div className="text-secondary">
+        <nav className="relative px-5">
+          <div className="flex justify-between h-[10dvh] items-center ">
             <div>
               <h1 className=" text-xl font-semibold">Se7en Magic</h1>
             </div>
 
-            <div className=" hidden sm:visible sm:flex gap-5">
+            <div className=" hidden sm:visible sm:flex sm:items-center gap-5">
               <NavLink
                 className=" cursor-pointer hover:underline hover:text-primary hover:underline-offset-[6px] text-xl"
                 to={"/"}
@@ -41,12 +41,12 @@ const Navbar = () => {
               >
                 Contact
               </NavLink>
-            </div>
 
-            <div className=" hidden sm:visible sm:flex gap-5">
-              <FaYoutube />
-              <FaLinkedin />
-              <FaSquareInstagram />
+              <div className=" hidden sm:visible sm:flex gap-3">
+                <FaYoutube />
+                <FaLinkedin />
+                <FaSquareInstagram />
+              </div>
             </div>
 
             {!showMenu ? (
