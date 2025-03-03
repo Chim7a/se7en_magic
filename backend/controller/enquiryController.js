@@ -36,4 +36,15 @@ const createEnquiryMessage = async (req, res) => {
   }
 };
 
-export { createEnquiryMessage };
+const getAllEnquiries = async (req, res) => {
+  try {
+    const enquiries = await EnquiryModel.find();
+    console.log(enquiries);
+
+    res.status(200).json({ message: "successful", data: enquiries });
+  } catch (error) {
+    res.status(400).json({ message: "failed", data: error });
+  }
+};
+
+export { createEnquiryMessage, getAllEnquiries };

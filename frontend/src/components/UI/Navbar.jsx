@@ -4,7 +4,7 @@ import { GrClose } from "react-icons/gr";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -18,9 +18,11 @@ const Navbar = () => {
       <div className="text-secondary">
         <nav className="relative px-5">
           <div className="flex justify-between h-[10dvh] items-center ">
-            <div>
-              <h1 className=" text-xl font-semibold">Se7en Magic</h1>
-            </div>
+            <Link to={"/"}>
+              <h1 className=" cursor-pointer text-2xl font-semibold">
+                Se7en Magic
+              </h1>
+            </Link>
 
             <div className=" hidden sm:visible sm:flex sm:items-center gap-5">
               <NavLink
@@ -52,14 +54,14 @@ const Navbar = () => {
             {!showMenu ? (
               <button
                 onClick={toggleMenu}
-                className=" sm:hidden text-xl font-bold"
+                className=" sm:hidden text-2xl font-bold"
               >
                 <GiHamburgerMenu />
               </button>
             ) : (
               <button
                 onClick={toggleMenu}
-                className=" sm:hidden text-xl font-bold"
+                className=" sm:hidden text-2xl font-extrabold"
               >
                 <GrClose />
               </button>
@@ -67,23 +69,23 @@ const Navbar = () => {
           </div>
 
           {/* Drop down Menu */}
-          <div className="sm:hidden absolute w-full flex justify-center z-50  ">
+          <div className="sm:hidden absolute left-0 w-full flex justify-center z-50 px-5  ">
             {showMenu ? (
-              <div className=" sm:hidden flex flex-col justify-center items-center w-full h-[90dvh] top-19 bg-white gap-8 ">
+              <div className=" sm:hidden flex flex-col justify-center items-center w-full h-[70dvh] rounded-md top-19 bg-primary opacity-90 gap-8 text-2xl ">
                 <NavLink
-                  className=" cursor-pointer hover:underline hover:text-primary hover:underline-offset-[6px] text-xl"
+                  className=" cursor-pointer hover:underline text-white hover:text-gray-300 hover:underline-offset-[6px]"
                   to={"/"}
                 >
                   Home
                 </NavLink>
                 <NavLink
-                  className=" cursor-pointer hover:underline hover:text-primary hover:underline-offset-[6px] text-xl"
+                  className=" cursor-pointer hover:underline text-white hover:text-gray-300 hover:underline-offset-[6px]"
                   to={"/project"}
                 >
                   Projects
                 </NavLink>
                 <NavLink
-                  className=" cursor-pointer hover:underline hover:text-primary hover:underline-offset-[6px] text-xl"
+                  className=" cursor-pointer hover:underline text-white hover:text-gray-300 hover:underline-offset-[6px]"
                   to={"/contact"}
                 >
                   Contact

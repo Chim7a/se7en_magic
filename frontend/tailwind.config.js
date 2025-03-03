@@ -11,5 +11,8 @@ export default {
       },
     },
   },
+  fontFamily: {
+    chivo: ["Maven Pro", "system-ui"],
+  },
   plugins: [],
 };

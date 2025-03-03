@@ -32,5 +32,5 @@ async function connectToDB() {
 
 app.listen(PORT, async () => {
   await connectToDB();
-  console.log("Server is listening on port:" + PORT);
+  console.log("Server is listening on port: " + PORT);
 });
