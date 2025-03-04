@@ -3,14 +3,12 @@ import moment from "moment";
 import { Link } from "react-router";
 
 const EnquiryList = ({ enquiries }) => {
-  console.log(enquiries);
-
   return (
     <section className="max-w-[1000px] mx-auto py-12">
       <table className="w-full">
         <thead>
-          <tr className="text-left text-secondary">
-            <td>Time</td>
+          <tr className="text-left text-secondary h-10">
+            <th>Time</th>
             <th>Name</th>
             <th>Email</th>
             <th>Enquiry Message</th>
@@ -20,7 +18,10 @@ const EnquiryList = ({ enquiries }) => {
         <tbody>
           {enquiries.map((item) => {
             return (
-              <tr key={item._id}>
+              <tr
+                key={item._id}
+                className=" border-y-2 border-primary rounded-md h-10 hover:bg-primary hover:text-white"
+              >
                 <td>
                   {moment(item.createdAt).format("MMMM Do YYYY, h:mm:ss")}
                 </td>
