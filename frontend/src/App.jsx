@@ -5,6 +5,7 @@ import Contact from "./pages/Contact";
 import MainLayout from "./layout/MainLayout";
 import ContentDescription from "./components/Home/ContentDescription";
 import Admin from "./pages/Protected/Admin";
+import EnquiryDetails from "./pages/Protected/EnquiryDetails";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
 
         {/* Contact page */}
         <Route path="/admin" element={<Admin />} />
+        <Route path=":enquiryId" element={<EnquiryDetails />} />
         <Route path="/contact" element={<Contact />} />
       </Route>
     </Routes>

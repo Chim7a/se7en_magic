@@ -39,7 +39,6 @@ const createEnquiryMessage = async (req, res) => {
 const getAllEnquiries = async (req, res) => {
   try {
     const enquiries = await EnquiryModel.find();
-    console.log(enquiries);
 
     res.status(200).json({ message: "successful", data: enquiries });
   } catch (error) {
@@ -47,4 +46,22 @@ const getAllEnquiries = async (req, res) => {
   }
 };
 
-export { createEnquiryMessage, getAllEnquiries };
+const getSingleEnquiry = async (req, res) => {
+  const { enquiryId } = req.params;
+
+  if (!enquiryId) {
+    return res
+      .status(400)
+      .json({ message: "Please provide a valid ID.", data: null });
+  }
+
+  try {
+    const singleEnquiry = await EnquiryModel.findOne({ _id: enquiryId });
+
+    res.status(200).json({ message: "successful", data: singleEnquiry });
+  } catch (error) {
+    res.status(400).json({ message: "failed", data: error });
+  }
+};
+
+export { createEnquiryMessage, getAllEnquiries, getSingleEnquiry };

@@ -20,16 +20,19 @@ const EnquiryList = ({ enquiries }) => {
             return (
               <tr
                 key={item._id}
-                className=" border-y-2 border-primary rounded-md h-10 hover:bg-primary hover:text-white"
+                className=" border-y-2 border-primary rounded-md h-10 hover:bg-primary hover:bg-opacity-85 hover:text-white"
               >
                 <td>
-                  {moment(item.createdAt).format("MMMM Do YYYY, h:mm:ss")}
+                  {moment(item.createdAt).format("MMMM Do YYYY, h:mm:ss a")}
                 </td>
                 <td>{item.name}</td>
                 <td>{item.email}</td>
                 <td>{item.enquiryMessage}</td>
                 <td>
-                  <Link className="border border-secondary px-4 rounded-md cursor-pointer font-semibold text-black hover:bg-secondary hover:text-white transition-all duration-500">
+                  <Link
+                    to={`/${item._id}`}
+                    className="border border-white bg-secondary px-4 rounded-md cursor-pointer font-light text-white hover:bg-accent hover:text-primary transition-all duration-500"
+                  >
                     View
                   </Link>
                 </td>
